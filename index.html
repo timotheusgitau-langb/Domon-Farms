@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Domon Agri | Fresh Farm Products & Agricultural Services</title>
+
+<meta name="description"
+content="Domon Agri provides fresh farm products, agricultural services and farm visits. Order fresh produce through WhatsApp, phone or email.">
+
+<meta name="keywords"
+content="Domon Agri, agriculture Kenya, fresh farm products, farm produce Kenya, agricultural services, farm visit, bananas, potatoes, fruits, vegetables, poultry">
+
+<meta name="author" content="Domon Agri">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --green:#8bcf45;
+    --green2:#5ea82f;
+    --dark:#06130a;
+    --dark2:#0a1d10;
+    --dark3:#102719;
+    --gold:#d6ad55;
+    --cream:#f5f1df;
+    --white:#ffffff;
+    --muted:#b9c7ba;
+    --glass:rgba(7,24,13,.72);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:var(--dark);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   GLOBAL FARM WALLPAPER
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+    background:
+    linear-gradient(
+        rgba(3,14,7,.86),
+        rgba(3,14,7,.94)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2400&q=90")
+    center/cover;
+
+    pointer-events:none;
+}
+
+/* =========================================================
+   SCROLL BAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#020b05;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--green);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#b5ed76;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:17px 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    z-index:2000;
+
+    background:rgba(2,13,7,.78);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(139,207,69,.16);
+
+    transition:.4s;
+}
+
+nav.scrolled{
+    padding:12px 6%;
+    background:rgba(2,10,5,.95);
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:31px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:var(--green);
+}
+
+.nav-links{
+    display:flex;
+    gap:27px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:800;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+
+    width:0;
+    height:2px;
+
+    background:var(--green);
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--green);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero-slides{
+    position:absolute;
+    inset:0;
+    z-index:-5;
+}
+
+.hero-slides img{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    animation:heroRotation 30s infinite;
+
+    transform:scale(1.04);
+}
+
+.hero-slides img:nth-child(1){
+    animation-delay:0s;
+}
+
+.hero-slides img:nth-child(2){
+    animation-delay:6s;
+}
+
+.hero-slides img:nth-child(3){
+    animation-delay:12s;
+}
+
+.hero-slides img:nth-child(4){
+    animation-delay:18s;
+}
+
+.hero-slides img:nth-child(5){
+    animation-delay:24s;
+}
+
+@keyframes heroRotation{
+
+    0%{
+        opacity:0;
+        transform:scale(1.05);
+    }
+
+    4%{
+        opacity:1;
+    }
+
+    18%{
+        opacity:1;
+    }
+
+    23%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(2,12,6,.86),
+        rgba(2,12,6,.35),
+        rgba(2,12,6,.8)
+    );
+
+    z-index:-4;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        transparent 20%,
+        rgba(0,0,0,.45) 100%
+    );
+
+    z-index:-3;
+}
+
+.hero-content{
+    max-width:1050px;
+
+    padding:140px 25px 70px;
+
+    animation:heroContent .9s ease forwards;
+}
+
+@keyframes heroContent{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.badge{
+    display:inline-block;
+
+    padding:11px 22px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(139,207,69,.65);
+
+    background:rgba(0,0,0,.35);
+
+    color:#b9ec82;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    margin-bottom:27px;
+
+    box-shadow:
+    0 0 25px rgba(139,207,69,.08);
+
+    animation:pulseBadge 3s infinite;
+}
+
+@keyframes pulseBadge{
+
+    0%,100%{
+        box-shadow:0 0 0 rgba(139,207,69,0);
+    }
+
+    50%{
+        box-shadow:0 0 28px rgba(139,207,69,.16);
+    }
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(65px,10vw,135px);
+
+    line-height:.9;
+
+    margin-bottom:30px;
+
+    letter-spacing:-4px;
+
+    text-shadow:
+    0 12px 40px rgba(0,0,0,.7);
+}
+
+.hero h1 span{
+    color:var(--green);
+}
+
+.hero p{
+    max-width:850px;
+
+    margin:auto;
+
+    color:#edf3eb;
+
+    font-size:clamp(17px,2vw,22px);
+
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:40px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:16px 28px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.btn::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:80%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.4),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.6s;
+}
+
+.btn:hover::before{
+    left:140%;
+}
+
+.btn-primary{
+    background:var(--green);
+    color:#06130a;
+
+    box-shadow:
+    0 12px 35px rgba(139,207,69,.18);
+}
+
+.btn-primary:hover{
+    transform:translateY(-6px) scale(1.03);
+
+    box-shadow:
+    0 20px 45px rgba(139,207,69,.28);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.55);
+
+    color:white;
+
+    background:rgba(0,0,0,.2);
+
+    backdrop-filter:blur(8px);
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#06130a;
+
+    transform:translateY(-6px);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+    padding:115px 7%;
+    position:relative;
+}
+
+.section-title{
+    max-width:900px;
+
+    text-align:center;
+
+    margin:0 auto 65px;
+}
+
+.small{
+    color:var(--green);
+
+    font-size:13px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(43px,5vw,72px);
+
+    line-height:1.05;
+
+    margin:13px 0 20px;
+}
+
+.section-title p{
+    color:var(--muted);
+
+    font-size:17px;
+
+    line-height:1.85;
+}
+
+/* =========================================================
+   ROOTED IN AGRICULTURE
+========================================================= */
+
+.intro{
+
+    background:
+    linear-gradient(
+        rgba(3,17,8,.82),
+        rgba(3,17,8,.94)
+    );
+
+}
+
+.intro-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:65px;
+
+    align-items:center;
+
+}
+
+.intro-text h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(44px,5vw,72px);
+
+    line-height:1.05;
+
+    margin-bottom:25px;
+
+}
+
+.intro-text h2 span{
+    color:var(--green);
+}
+
+.intro-text p{
+
+    color:#d1ddd2;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+    margin-bottom:18px;
+
+}
+
+.fruit-gallery{
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    grid-template-rows:220px 220px;
+
+    gap:14px;
+
+}
+
+.fruit-gallery div{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    position:relative;
+
+}
+
+.fruit-gallery div:first-child{
+
+    grid-row:span 2;
+
+}
+
+.fruit-gallery img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+}
+
+.fruit-gallery div:hover img{
+    transform:scale(1.1);
+}
+
+.fruit-label{
+
+    position:absolute;
+
+    left:15px;
+    bottom:15px;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(8px);
+
+    padding:9px 14px;
+
+    border-radius:30px;
+
+    font-weight:800;
+
+    font-size:13px;
+}
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products{
+    background:
+    linear-gradient(
+        rgba(5,19,10,.94),
+        rgba(5,19,10,.96)
+    );
+}
+
+.product-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:24px;
+}
+
+.card{
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(18,45,25,.9),
+        rgba(7,25,14,.95)
+    );
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(139,207,69,.12);
+
+    transition:.4s;
+
+    position:relative;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.18);
+}
+
+.card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.015);
+
+    border-color:rgba(139,207,69,.5);
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.4);
+}
+
+.card-image{
+
+    height:250px;
+
+    overflow:hidden;
+}
+
+.card-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.card-content p{
+
+    color:#aebcaf;
+
+    line-height:1.65;
+}
+
+/* =========================================================
+   AGRICULTURAL SERVICES
+========================================================= */
+
+.services{
+
+    background:
+    linear-gradient(
+        rgba(3,15,8,.88),
+        rgba(3,15,8,.96)
+    ),
+    url("https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=2200&q=90")
+    center/cover fixed;
+
+}
+
+.service-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.service{
+
+    min-height:300px;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:
+    rgba(8,28,15,.78);
+
+    border:1px solid rgba(139,207,69,.13);
+
+    backdrop-filter:blur(10px);
+
+    transition:.4s;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.service::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:rgba(139,207,69,.06);
+
+    right:-40px;
+    bottom:-40px;
+
+    transition:.5s;
+}
+
+.service:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(139,207,69,.45);
+}
+
+.service:hover::after{
+    transform:scale(2.2);
+}
+
+.service-icon{
+
+    font-size:45px;
+
+    margin-bottom:20px;
+}
+
+.service h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:29px;
+
+    margin-bottom:13px;
+}
+
+.service p{
+
+    color:#b9c7ba;
+
+    line-height:1.7;
+}
+
+/* =========================================================
+   SEASONAL HARVEST
+========================================================= */
+
+.season{
+
+    background:
+    linear-gradient(
+        rgba(4,17,9,.9),
+        rgba(4,17,9,.95)
+    );
+}
+
+.season-box{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:45px;
+
+    align-items:center;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+.season-image{
+
+    height:480px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.45);
+}
+
+.season-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.8s;
+}
+
+.season-image:hover img{
+    transform:scale(1.06);
+}
+
+.season-text h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:55px;
+
+    margin-bottom:20px;
+}
+
+.season-text h2 span{
+    color:var(--green);
+}
+
+.season-text p{
+
+    color:#bdc9bf;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+}
+
+.harvest-list{
+
+    list-style:none;
+
+    margin:25px 0;
+}
+
+.harvest-list li{
+
+    padding:11px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.07);
+
+    color:#dce5dd;
+
+    font-weight:600;
+}
+
+/* =========================================================
+   FARM VISIT
+========================================================= */
+
+.visit{
+
+    background:
+    linear-gradient(
+        rgba(4,17,9,.76),
+        rgba(4,17,9,.92)
+    ),
+    url("https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=2200&q=90")
+    center/cover fixed;
+
+}
+
+.visit-box{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+    padding:50px;
+
+    border-radius:35px;
+
+    background:rgba(5,22,11,.75);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(139,207,69,.18);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.visit-text h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:50px;
+
+    margin-bottom:20px;
+}
+
+.visit-text h2 span{
+    color:var(--green);
+}
+
+.visit-text p{
+
+    color:#c2cec4;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+.visit-info{
+
+    display:grid;
+
+    gap:15px;
+}
+
+.info-card{
+
+    padding:22px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.info-card:hover{
+
+    transform:translateX(7px);
+
+    border-color:rgba(139,207,69,.35);
+}
+
+.info-card strong{
+
+    display:block;
+
+    color:var(--green);
+
+    margin-bottom:5px;
+}
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why{
+
+    background:#06150c;
+}
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:24px;
+}
+
+.feature{
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    background:#0b2112;
+
+    border-radius:25px;
+
+    border:1px solid rgba(139,207,69,.1);
+
+    transition:.4s;
+}
+
+.feature:hover{
+
+    transform:translateY(-9px);
+
+    background:#102b18;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.feature-icon{
+
+    font-size:44px;
+
+    margin-bottom:18px;
+}
+
+.feature h3{
+
+    margin-bottom:12px;
+
+    font-size:20px;
+}
+
+.feature p{
+
+    color:#aebcb0;
+
+    line-height:1.6;
+}
+
+/* =========================================================
+   AGRICULTURE WALL
+========================================================= */
+
+.wall{
+
+    padding:90px 3%;
+
+    background:#041008;
+}
+
+.wall-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    grid-auto-rows:190px;
+
+    gap:8px;
+}
+
+.wall-grid div{
+
+    overflow:hidden;
+
+    border-radius:13px;
+}
+
+.wall-grid div:nth-child(1),
+.wall-grid div:nth-child(7){
+
+    grid-row:span 2;
+}
+
+.wall-grid img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+}
+
+.wall-grid img:hover{
+
+    transform:scale(1.1);
+}
+
+/* =========================================================
+   LET'S GROW
+========================================================= */
+
+.grow{
+
+    min-height:650px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(2,13,7,.65),
+        rgba(2,13,7,.9)
+    ),
+    url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2400&q=90")
+    center/cover fixed;
+}
+
+.grow-content{
+
+    max-width:950px;
+
+    padding:50px;
+}
+
+.grow h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(50px,7vw,90px);
+
+    line-height:1;
+
+    margin-bottom:25px;
+}
+
+.grow h2 span{
+    color:var(--green);
+}
+
+.grow p{
+
+    font-size:20px;
+
+    color:#e0e7e0;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+/* =========================================================
+   ORDER
+========================================================= */
+
+.order{
+
+    background:#081a0e;
+}
+
+.order-box{
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:60px 45px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        rgba(5,24,12,.86),
+        rgba(5,24,12,.92)
+    ),
+    url("https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+
+    border:1px solid rgba(139,207,69,.2);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.order-box h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:55px;
+
+    margin-bottom:20px;
+}
+
+.order-box p{
+
+    color:#c4cec6;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+.contact-options{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+.contact{
+
+    text-decoration:none;
+
+    padding:16px 22px;
+
+    border-radius:50px;
+
+    background:#112b18;
+
+    color:white;
+
+    border:1px solid rgba(139,207,69,.25);
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.contact:hover{
+
+    background:var(--green);
+
+    color:#06130a;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 30px rgba(139,207,69,.2);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:65px 7% 30px;
+
+    background:#020b05;
+
+    text-align:center;
+}
+
+.footer-logo{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:45px;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+}
+
+.footer-logo span{
+    color:var(--green);
+}
+
+footer p{
+
+    color:#87968b;
+
+    line-height:1.8;
+}
+
+.socials{
+
+    margin:25px 0;
+}
+
+.socials a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    margin:5px;
+
+    background:#102619;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.socials a:hover{
+
+    background:var(--green);
+
+    color:#06130a;
+
+    transform:
+    translateY(-6px)
+    rotate(5deg);
+}
+
+.copyright{
+
+    margin-top:30px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    font-size:13px;
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#topBtn{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:55px;
+    height:55px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    color:#06130a;
+
+    font-size:23px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    z-index:1500;
+
+    opacity:.75;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 35px rgba(139,207,69,.25);
+}
+
+#topBtn:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.08);
+
+    opacity:1;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .intro-grid,
+    .season-box,
+    .visit-box{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .wall-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:650px){
+
+    section{
+        padding:85px 5%;
+    }
+
+    .hero h1{
+        font-size:58px;
+
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:300px;
+    }
+
+    .fruit-gallery{
+
+        grid-template-columns:1fr 1fr;
+
+        grid-template-rows:180px 180px;
+    }
+
+    .fruit-gallery div:first-child{
+        grid-row:span 2;
+    }
+
+    .service-grid,
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .season-image{
+        height:350px;
+    }
+
+    .season-text h2{
+        font-size:42px;
+    }
+
+    .visit-box{
+        padding:30px 20px;
+    }
+
+    .visit-text h2{
+        font-size:42px;
+    }
+
+    .order-box{
+        padding:40px 20px;
+    }
+
+    .order-box h2{
+        font-size:40px;
+    }
+
+    .wall-grid{
+        grid-template-columns:repeat(2,1fr);
+
+        grid-auto-rows:150px;
+    }
+
+    .grow{
+        min-height:550px;
+    }
+
+    .grow-content{
+        padding:20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body id="top">
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav id="navbar">
+
+    <div class="logo">
+        Domon <span>Agri</span> 🌱
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#top">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">Our Story</a>
+        </li>
+
+        <li>
+            <a href="#products">Products</a>
+        </li>
+
+        <li>
+            <a href="#services">Services</a>
+        </li>
+
+        <li>
+            <a href="#visit">Visit Us</a>
+        </li>
+
+        <li>
+            <a href="#why">Why Us</a>
+        </li>
+
+        <li>
+            <a href="#order">Order</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-slides">
+
+        <img
+        src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2400&q=90"
+        alt="Kenyan style agricultural farm">
+
+        <img
+        src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=2400&q=90"
+        alt="Fresh fruits and agricultural produce">
+
+        <img
+        src="https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?auto=format&fit=crop&w=2400&q=90"
+        alt="Fresh farm vegetables">
+
+        <img
+        src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=2400&q=90"
+        alt="Agricultural crops">
+
+        <img
+        src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2400&q=90"
+        alt="Beautiful agricultural field">
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🌱 FARM • FRESH • NATURAL
+        </div>
+
+        <h1>
+            Domon <span>Agri</span>
+        </h1>
+
+        <p>
+            Growing fresh. Supplying naturally. Building tomorrow.
+            Connecting customers with quality agricultural products,
+            practical farm services and a real farming experience.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+            href="#products"
+            class="btn btn-primary">
+            🌾 Explore Products
+            </a>
+
+            <a
+            href="#visit"
+            class="btn btn-outline">
+            🚜 Visit Our Farm
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     ROOTED IN AGRICULTURE
+===================================================== -->
+
+<section class="intro" id="about">
+
+    <div class="intro-grid">
+
+
+        <div class="intro-text reveal">
+
+            <div class="small">
+                🌿 OUR STORY
+            </div>
+
+            <h2>
+                Rooted in
+                <span>Agriculture.</span>
+            </h2>
+
+            <p>
+                Domon Agri is built around a simple belief:
+                better agriculture creates better food,
+                stronger communities and a brighter future.
+            </p>
+
+            <p>
+                We focus on fresh farm products, responsible
+                farming and connecting customers directly
+                with agriculture.
+            </p>
+
+            <p>
+                🍊 From fruits and vegetables to potatoes,
+                poultry and other farm products, our goal
+                is simple — quality from the farm to you.
+            </p>
+
+            <a
+            href="#order"
+            class="btn btn-primary">
+            📩 Make an Inquiry
+            </a>
+
+        </div>
+
+
+        <!-- REALISTIC FRUIT GALLERY -->
+
+        <div class="fruit-gallery reveal">
+
+            <div>
+
+                <img
+                src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=90"
+                alt="Fresh bananas">
+
+                <div class="fruit-label">
+                    🍌 Fresh Bananas
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <img
+                src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=1000&q=90"
+                alt="Fresh oranges">
+
+                <div class="fruit-label">
+                    🍊 Fresh Fruits
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <img
+                src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=1000&q=90"
+                alt="Fresh apples and fruit">
+
+                <div class="fruit-label">
+                    🍎 Farm Fruits
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section class="products" id="products">
+
+    <div class="section-title reveal">
+
+        <div class="small">
+            🌾 WHAT WE OFFER
+        </div>
+
+        <h2>
+            Fresh From The Farm
+        </h2>
+
+        <p>
+            Real agricultural products sourced with freshness
+            and quality in mind. Availability may vary by season.
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <div class="card reveal">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1100&q=90"
+                alt="Fresh bananas">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>🍌 Bananas</h3>
+
+                <p>
+                    Naturally grown bananas suitable for homes,
+                    shops and bulk customers.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=1100&q=90"
+                alt="Fresh potatoes">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>🥔 Potatoes</h3>
+
+                <p>
+                    Fresh farm potatoes harvested for quality,
+                    cooking and everyday use.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=1100&q=90"
+                alt="Fresh vegetables">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>🥬 Fresh Vegetables</h3>
+
+                <p>
+                    Fresh vegetables selected with quality
+                    and freshness in mind.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=1100&q=90"
+                alt="Fresh tomatoes">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>🍅 Tomatoes</h3>
+
+                <p>
+                    Farm-fresh tomatoes suitable for households,
+                    food businesses and resellers.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=1100&q=90"
+                alt="Fresh vegetables from farm">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>🥕 Farm Produce</h3>
+
+                <p>
+                    A growing selection of seasonal agricultural
+                    produce from the farm.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=1100&q=90"
+                alt="Poultry farming">
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>🐔 Poultry</h3>
+
+                <p>
+                    Poultry farming focused on proper care,
+                    quality and responsible production.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AGRICULTURAL SERVICES
+===================================================== -->
+
+<section class="services" id="services">
+
+    <div class="section-title reveal">
+
+        <div class="small">
+            🚜 AGRICULTURAL SERVICES
+        </div>
+
+        <h2>
+            More Than Farm Products
+        </h2>
+
+        <p>
+            Domon Agri is growing into a practical agricultural
+            destination for customers, farmers and agriculture lovers.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+        <div class="service reveal">
+
+            <div class="service-icon">
+                🌱
+            </div>
+
+            <h3>
+                Farm Produce Supply
+            </h3>
+
+            <p>
+                Get fresh agricultural products for home use,
+                shops, food businesses and other customers.
+            </p>
+
+        </div>
+
+
+        <div class="service reveal">
+
+            <div class="service-icon">
+                🚜
+            </div>
+
+            <h3>
+                Farm Experience
+            </h3>
+
+            <p>
+                Visit the farm, see agricultural activities
+                and experience where food and farm products begin.
+            </p>
+
+        </div>
+
+
+        <div class="service reveal">
+
+            <div class="service-icon">
+                🤝
+            </div>
+
+            <h3>
+                Agricultural Partnerships
+            </h3>
+
+            <p>
+                We welcome conversations with farmers,
+                suppliers, businesses and agriculture enthusiasts.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEASONAL HARVEST
+===================================================== -->
+
+<section class="season">
+
+    <div class="season-box">
+
+
+        <div class="season-image reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=90"
+            alt="Fresh crops growing on a farm">
+
+        </div>
+
+
+        <div class="season-text reveal">
+
+            <div class="small">
+                🌾 SEASONAL HARVEST
+            </div>
+
+            <h2>
+                Freshness Follows
+                <span>The Season.</span>
+            </h2>
+
+            <p>
+                Agriculture changes with the seasons.
+                Our available products may change depending
+                on harvest periods and farm production.
+            </p>
+
+            <ul class="harvest-list">
+
+                <li>🍌 Fresh fruits</li>
+
+                <li>🥔 Fresh potatoes</li>
+
+                <li>🥬 Seasonal vegetables</li>
+
+                <li>🍅 Fresh farm crops</li>
+
+                <li>🐔 Poultry products</li>
+
+            </ul>
+
+            <a
+            href="#order"
+            class="btn btn-primary">
+            📲 Check Availability
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FARM VISIT
+===================================================== -->
+
+<section class="visit" id="visit">
+
+    <div class="section-title reveal">
+
+        <div class="small">
+            🚜 COME TO THE FARM
+        </div>
+
+        <h2>
+            Visit & See Agriculture For Yourself
+        </h2>
+
+        <p>
+            Customers can visit Domon Agri and experience
+            the farming environment instead of only seeing
+            products online.
+        </p>
+
+    </div>
+
+
+    <div class="visit-box reveal">
+
+
+        <div class="visit-text">
+
+            <h2>
+                Step Into
+                <span>The Farm.</span>
+            </h2>
+
+            <p>
+                See where agricultural products come from,
+                learn about farming activities and experience
+                the environment behind Domon Agri.
+            </p>
+
+            <p>
+                Whether you are a customer, student, agriculture
+                enthusiast or business partner, we welcome
+                meaningful farm visits.
+            </p>
+
+            <a
+            href="https://wa.me/254715635720?text=Hello%20Domon%20Agri%2C%20I%20would%20like%20to%20visit%20the%20farm."
+            target="_blank"
+            class="btn btn-primary">
+            💬 Arrange a Farm Visit
+            </a>
+
+        </div>
+
+
+        <div class="visit-info">
+
+
+            <div class="info-card">
+
+                <strong>
+                    🗓️ Visiting Days
+                </strong>
+
+                Monday – Saturday
+
+            </div>
+
+
+            <div class="info-card">
+
+                <strong>
+                    🕗 Visiting Hours
+                </strong>
+
+                8:00 AM – 6:00 PM
+
+            </div>
+
+
+            <div class="info-card">
+
+                <strong>
+                    📲 Booking
+                </strong>
+
+                Contact us before visiting
+
+            </div>
+
+
+            <div class="info-card">
+
+                <strong>
+                    🌱 What You Can Experience
+                </strong>
+
+                Farm environment, crops,
+                agricultural activities and more.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY DOMON AGRI
+===================================================== -->
+
+<section class="why" id="why">
+
+    <div class="section-title reveal">
+
+        <div class="small">
+            🌿 WHY DOMON AGRI
+        </div>
+
+        <h2>
+            Growing With Purpose
+        </h2>
+
+        <p>
+            Agriculture is more than selling products.
+            It is about quality, trust, learning and the future.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="feature reveal">
+
+            <div class="feature-icon">
+                🌱
+            </div>
+
+            <h3>
+                Fresh Agriculture
+            </h3>
+
+            <p>
+                We focus on agricultural products
+                and freshness.
+            </p>
+
+        </div>
+
+
+        <div class="feature reveal">
+
+            <div class="feature-icon">
+                🤝
+            </div>
+
+            <h3>
+                Customer First
+            </h3>
+
+            <p>
+                Clear communication and convenient
+                ordering are important to us.
+            </p>
+
+        </div>
+
+
+        <div class="feature reveal">
+
+            <div class="feature-icon">
+                🚜
+            </div>
+
+            <h3>
+                Farm Focused
+            </h3>
+
+            <p>
+                Our identity is built around
+                real agriculture.
+            </p>
+
+        </div>
+
+
+        <div class="feature reveal">
+
+            <div class="feature-icon">
+                🌍
+            </div>
+
+            <h3>
+                Future Driven
+            </h3>
+
+            <p>
+                We believe agriculture can create
+                opportunities for tomorrow.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AGRICULTURE IMAGE WALL
+===================================================== -->
+
+<section class="wall">
+
+    <div class="section-title reveal">
+
+        <div class="small">
+            🌾 FARM LIFE
+        </div>
+
+        <h2>
+            A World Of Agriculture
+        </h2>
+
+    </div>
+
+
+    <div class="wall-grid">
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=90"
+            alt="Agricultural farm">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?auto=format&fit=crop&w=1000&q=90"
+            alt="Farm crops">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1000&q=90"
+            alt="Bananas">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=1000&q=90"
+            alt="Potatoes">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=1000&q=90"
+            alt="Tomatoes">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=1000&q=90"
+            alt="Fresh produce">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=1000&q=90"
+            alt="Poultry farm">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=1000&q=90"
+            alt="Fresh fruits">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=1000&q=90"
+            alt="Farm fruits">
+        </div>
+
+
+        <div>
+            <img
+            src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=90"
+            alt="Agricultural field">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LET'S GROW TOGETHER
+===================================================== -->
+
+<section class="grow">
+
+    <div class="grow-content reveal">
+
+        <div class="small">
+            🌍 OUR VISION
+        </div>
+
+        <h2>
+            Let's
+            <span>Grow Together.</span>
+            🌱
+        </h2>
+
+        <p>
+            Every seed planted is a step toward tomorrow.
+            Every customer supported becomes part of our journey.
+            Together, we can build stronger agriculture,
+            better food and a brighter future.
+        </p>
+
+        <a
+        href="#order"
+        class="btn btn-primary">
+        🌱 Start With Domon Agri
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ORDER
+===================================================== -->
+
+<section class="order" id="order">
+
+    <div class="section-title reveal">
+
+        <div class="small">
+            📞 GET IN TOUCH
+        </div>
+
+        <h2>
+            Ready To Order?
+        </h2>
+
+        <p>
+            Contact Domon Agri through WhatsApp,
+            phone or email. Tell us what you need.
+        </p>
+
+    </div>
+
+
+    <div class="order-box reveal">
+
+        <h2>
+            Let's Make It Happen 🌾
+        </h2>
+
+        <p>
+            For product availability, orders,
+            farm visits, agricultural services
+            and partnerships, contact us directly.
+        </p>
+
+
+        <div class="contact-options">
+
+
+            <a
+            class="contact"
+            href="https://wa.me/254715635720?text=Hello%20Domon%20Agri%2C%20I%20would%20like%20to%20make%20an%20order."
+            target="_blank">
+
+            💬 WhatsApp
+
+            </a>
+
+
+            <a
+            class="contact"
+            href="tel:0715635720">
+
+            📞 0715 635 720
+
+            </a>
+
+
+            <a
+            class="contact"
+            href="mailto:timotheusgitau@gmail.com?subject=Domon%20Agri%20Inquiry">
+
+            ✉️ Email
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        Domon
+        <span>Agri</span>
+        🌱
+
+    </div>
+
+    <p>
+        Growing fresh. Supplying naturally.
+        Building tomorrow.
+    </p>
+
+
+    <div class="socials">
+
+        <a
+        href="https://wa.me/254715635720"
+        target="_blank">
+        💬
+        </a>
+
+
+        <a
+        href="mailto:timotheusgitau@gmail.com">
+        ✉️
+        </a>
+
+
+        <a
+        href="tel:0715635720">
+        📞
+        </a>
+
+    </div>
+
+
+    <p>
+
+        📧 timotheusgitau@gmail.com
+
+        <br>
+
+        📱 0715 635 720
+
+    </p>
+
+
+    <div class="copyright">
+
+        © 2026 Domon Agri.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button
+id="topBtn"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+========================================================= */
+
+const navbar =
+document.getElementById("navbar");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 60){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 500){
+
+        topBtn.style.opacity="1";
+
+    }else{
+
+        topBtn.style.opacity=".75";
+
+    }
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+========================================================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("active");
+
+                revealObserver.unobserve(
+                    entry.target
+                );
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+revealElements.forEach(element=>{
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   SMOOTH NAVIGATION
+========================================================= */
+
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(link=>{
+
+    link.addEventListener("click",function(e){
+
+        const target =
+        document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if(target){
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   IMAGE ERROR FALLBACK
+========================================================= */
+
+document
+.querySelectorAll("img")
+.forEach(img=>{
+
+    img.addEventListener("error",()=>{
+
+        img.style.background=
+        "#102719";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
